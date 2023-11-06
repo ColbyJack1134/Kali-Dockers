@@ -10,7 +10,7 @@ if [[ ! -z "$containers" ]]; then
 fi
 
 # Remove the corresponding users
-for user in $(getent passwd | grep kali | cut -d: -f1); do
+for user in $(getent passwd | grep kali[0-9]+ | cut -d: -f1); do
     # Kill all processes for the user
     pkill -u $user
     
