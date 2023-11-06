@@ -41,7 +41,7 @@ for i in $(seq 1 $number_of_machines); do
     # Create .ssh directory and rc file
     mkdir -p /home/kali${i}/.ssh
     echo "#!/bin/bash" > /home/kali${i}/.ssh/rc
-    echo "exec docker exec -it kali${i} /bin/bash -c 'cd /root && /bin/bash'" >> /home/kali${i}/.ssh/rc
+    echo "exec docker exec -it kali${i} /bin/bash -c 'cd /root && tmux'" >> /home/kali${i}/.ssh/rc
     chmod +x /home/kali${i}/.ssh/rc
     chown -R kali${i}:kali${i} /home/kali${i}
 
